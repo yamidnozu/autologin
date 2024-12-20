@@ -65,22 +65,36 @@ const DEFAULT_USERS = [
           'http://localhost:9000/*'
         ]
       }, () => {
-        // Después de crear el menú principal, crear los submenús con los usuarios
-        chrome.storage.local.get(['--extension--users'], (result) => {
-          const users = result['--extension--users'] || [];
-          users.forEach((user, index) => {
-            chrome.contextMenus.create({
-              id: `user-${index}`,
-              parentId: 'iniciar-sesion-con',
-              title: user.apodo,
-              contexts: ['page'],
-              documentUrlPatterns: [
-                'https://canalnegocios-qa.apps.ambientesbc.com/*',
-                'http://localhost:9000/*'
-              ]
+        // Después de crear el menú principal, crear los submenús
+
+        // **1. Crear el submenú "Gestionar usuarios" como el primer elemento**
+        chrome.contextMenus.create({
+          id: 'manage-users',
+          parentId: 'iniciar-sesion-con',
+          title: 'Gestionar usuarios',
+          contexts: ['page'],
+          documentUrlPatterns: [
+            'https://canalnegocios-qa.apps.ambientesbc.com/*',
+            'http://localhost:9000/*'
+          ]
+        }, () => {
+          // **2. Crear los submenús de usuarios después de "Gestionar usuarios"**
+          chrome.storage.local.get(['--extension--users'], (result) => {
+            const users = result['--extension--users'] || [];
+            users.forEach((user, index) => {
+              chrome.contextMenus.create({
+                id: `user-${index}`,
+                parentId: 'iniciar-sesion-con',
+                title: user.apodo,
+                contexts: ['page'],
+                documentUrlPatterns: [
+                  'https://canalnegocios-qa.apps.ambientesbc.com/*',
+                  'http://localhost:9000/*'
+                ]
+              });
             });
+            console.log('Menús contextuales de usuarios creados.');
           });
-          console.log('Menús contextuales de usuarios creados.');
         });
       });
     });
@@ -95,7 +109,10 @@ const DEFAULT_USERS = [
   
   // Manejar los clics en el menú contextual
   chrome.contextMenus.onClicked.addListener((info, tab) => {
-    if (info.menuItemId.startsWith('user-')) {
+    if (info.menuItemId === 'manage-users') {
+      // **3. Abrir la página de opciones cuando se hace clic en "Gestionar usuarios"**
+      chrome.runtime.openOptionsPage();
+    } else if (info.menuItemId.startsWith('user-')) {
       const userIndex = parseInt(info.menuItemId.split('-')[1], 10);
       chrome.storage.local.get(['--extension--users'], (result) => {
         const users = result['--extension--users'] || [];
@@ -113,4 +130,3 @@ const DEFAULT_USERS = [
       });
     }
   });
-  

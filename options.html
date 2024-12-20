@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Auto Login Extension - Opciones</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h1 {
+      font-size: 20px;
+    }
+    form {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input, select {
+      width: 100%;
+      padding: 5px;
+      box-sizing: border-box;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 8px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    .action-btn {
+      margin-right: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    .edit-btn {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+    }
+    .delete-btn {
+      background-color: #f44336;
+      color: white;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Gestionar Usuarios</h1>
+  <form id="user-form">
+    <input type="hidden" id="user-index" name="user-index">
+    <label for="apodo">Apodo:</label>
+    <input type="text" id="apodo" name="apodo" required>
+
+    <label for="documentType">Tipo de documento:</label>
+    <select id="documentType" name="documentType" required>
+      <option value="">Selecciona un tipo</option>
+      <option value="NIT">NIT</option>
+      <option value="CC">Cédula de Ciudadanía</option>
+      <option value="CE">Cédula de Extranjería</option>
+      <option value="PAS">Pasaporte</option>
+      <option value="PNN">ID Extranjero Persona Natural</option>
+      <option value="PJN">ID Extranjero Persona Jurídica</option>
+      <option value="FC">Fideicomiso</option>
+      <option value="CD">Carné Diplomático</option>
+      <option value="TI">Tarjeta de Identidad</option>
+      <option value="RC">Registro Civil</option>
+    </select>
+
+    <label for="documentNumber">Documento:</label>
+    <input type="text" id="documentNumber" name="documentNumber" required>
+
+    <label for="user">Usuario:</label>
+    <input type="text" id="user" name="user" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+
+    <button type="submit">Agregar Usuario</button>
+    <button type="button" id="cancel-edit" style="display:none;">Cancelar Edición</button>
+  </form>
+
+  <h2>Usuarios Existentes</h2>
+  <table id="users-table">
+    <thead>
+      <tr>
+        <th>Apodo</th>
+        <th>Tipo de Documento</th>
+        <th>Documento</th>
+        <th>Usuario</th>
+        <th>Password</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Los usuarios se llenarán aquí -->
+    </tbody>
+  </table>
+
+  <script src="options.js"></script>
+</body>
+</html>

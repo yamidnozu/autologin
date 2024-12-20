@@ -182,11 +182,11 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         if (successElement) {
           clearInterval(interval);
           console.log("Acceso exitoso: elemento #svnMenuV2 encontrado.");
-          alert("Ingreso correctamente.");
+          
         } else if (errorInput) {
           clearInterval(interval);
           console.log("Fallo al ingresar: error en el campo 'Usuario'. Redirigiendo...");
-          alert("Fallo el ingreso. Regresando a la página inicial...");
+          
           window.location.href = (window.location.origin.includes('localhost:9000')) ? 
             'http://localhost:9000/ingreso/empresa' : 
             'https://canalnegocios-qa.apps.ambientesbc.com/ingreso/empresa';

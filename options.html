@@ -35,6 +35,7 @@
       padding: 8px;
       border: 1px solid #ddd;
       text-align: left;
+      cursor: pointer; /* Añadido para indicar que las celdas son clicables */
     }
     th {
       background-color: #f2f2f2;
@@ -53,6 +54,30 @@
       background-color: #f44336;
       color: white;
       border: none;
+    }
+    /* Estilos para el mensaje de copia */
+    #copy-message {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      z-index: 1000;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+    #copy-message.show {
+      display: block;
+      opacity: 1;
+    }
+
+    /* Clase para resaltar la fila seleccionada */
+    tr.selected {
+      background-color: #e0f7fa; /* Color de fondo sutil, puedes ajustarlo según prefieras */
     }
   </style>
 </head>
@@ -107,6 +132,9 @@
       <!-- Los usuarios se llenarán aquí -->
     </tbody>
   </table>
+
+  <!-- Div para mostrar mensajes de copia -->
+  <div id="copy-message"></div>
 
   <script src="options.js"></script>
 </body>

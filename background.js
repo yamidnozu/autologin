@@ -1,42 +1,141 @@
 // background.js
 
 const DEFAULT_USERS = [
-    {
-      apodo: 'pricing51',
-      documentType: 'CC',
-      documentNumber: '2024021902',
-      user: 'pricing51',
-      password: 'pricingPASSWORD05#',
-    },
-    {
-      apodo: 'pricing05',
-      documentType: 'CC',
-      documentNumber: '1998233207',
-      user: 'pricing05',
-      password: 'pricingPASSWORD05#',
-    },
-    {
-      apodo: 'pricing52',
-      documentType: 'CC',
-      documentNumber: '1998233677',
-      user: 'pricing52',
-      password: 'pricingPASSWORD05#',
-    },
-    {
-      apodo: 'filiales07',
-      documentType: 'CC',
-      documentNumber: '2024021906',
-      user: 'filiales07',
-      password: 'ABCD12345#ed2#',
-    },
-    {
-      apodo: 'pricing57',
-      documentType: 'CC',
-      documentNumber: '1998233207',
-      user: 'pricing57',
-      password: 'pricingPASSWORD05#',
-    }
-  ];
+  {
+    apodo: 'pricing51 (⚡ Token: SI, Privilegio: Ejecutor directo, Plan: Plus)',
+    documentType: 'CC',
+    documentNumber: '1998233207',
+    user: 'pricing51',
+    password: 'pricingPASSWORD05#',
+  },
+  {
+    apodo: 'pricing05 (⚠️ adicional)',
+    documentType: 'CC',
+    documentNumber: '1998233207',
+    user: 'pricing05',
+    password: 'pricingPASSWORD05#',
+  },
+  {
+    apodo: 'pricing52 (⚡ Token: SI, Privilegio: Aprobador, Plan: Plus)',
+    documentType: 'CC',
+    documentNumber: '1998233207',
+    user: 'pricing52',
+    password: 'pricingPASSWORD05#',
+  },
+  {
+    apodo: 'filiales07 (⭕ adicional)',
+    documentType: 'CC',
+    documentNumber: '2024021906',
+    user: 'filiales07',
+    password: 'ABCD12345#ed2',
+  },
+  {
+    apodo: 'pricing57 (⭕ adicional)',
+    documentType: 'CC',
+    documentNumber: '1998233207',
+    user: 'pricing57',
+    password: 'pricingPASSWORD05#',
+  },
+  {
+    apodo: 'pricing53 (⚡ Token: SI, Privilegio: Aprobador, Plan: Plus)',
+    documentType: 'CC',
+    documentNumber: '1998233207',
+    user: 'pricing53',
+    password: 'pricingPASSWORD05#',
+  },
+  {
+    apodo: 'pricing54 (⚡ Token: SI, Privilegio: Preparador, Plan: Plus)',
+    documentType: 'CC',
+    documentNumber: '1998233207',
+    user: 'pricing54',
+    password: 'pricingPASSWORD05#',
+  },
+  {
+    apodo: 'pricing55 (⚡ Token: SI, Privilegio: Preparador, Plan: Plus)',
+    documentType: 'CC',
+    documentNumber: '1998233207',
+    user: 'pricing55',
+    password: 'pricingPASSWORD05#',
+  },
+  {
+    apodo: 'pricing56 (⚡ Token: SI, Privilegio: Consulta, Plan: Plus)',
+    documentType: 'CC',
+    documentNumber: '1998233207',
+    user: 'pricing56',
+    password: 'pricingPASSWORD05#',
+  },
+  {
+    apodo: 'pricing08 (⚡ Token: SI, Privilegio: Ejecutor directo, Plan: Esencial)',
+    documentType: 'CC',
+    documentNumber: '1998055570',
+    user: 'pricing08',
+    password: 'pricingPASSWORD05#',
+  },
+  {
+    apodo: 'pricing09 (⚡ Token: SI, Privilegio: Ejecutor directo, Plan: Esencial)',
+    documentType: 'CC',
+    documentNumber: '1928273730',
+    user: 'pricing09',
+    password: 'pricingPASSWORD05#',
+  },
+  {
+    apodo: 'pricing00 (⚡ Token: SI, Privilegio: Ejecutor directo, Plan: Esencial)',
+    documentType: 'CC',
+    documentNumber: '1928273731',
+    user: 'pricing00',
+    password: 'pricingPASSWORD05#',
+  },
+  {
+    apodo: 'pricing50 (⚡ Token: NO, Privilegio: Ejecutor directo, Plan: Esencial)',
+    documentType: 'CC',
+    documentNumber: '1928273727',
+    user: 'pricing50',
+    password: 'pricingPASSWORD05#',
+  },
+  {
+    apodo: 'pricing60 (⚡ Token: SI, Privilegio: Ejecutor directo, Plan: Plus)',
+    documentType: 'CC',
+    documentNumber: '1928273732',
+    user: 'pricing60',
+    password: 'pricingPASSWORD05#',
+  },
+  {
+    apodo: 'pricing61 (⚡ Token: NO, Privilegio: Ejecutor directo, Plan: Esencial)',
+    documentType: 'CC',
+    documentNumber: '1928273728',
+    user: 'pricing61',
+    password: 'pricingPASSWORD05#',
+  },
+  {
+    apodo: 'pricing65 (⚡ Token: NO, Privilegio: Ejecutor directo, Plan: Esencial)',
+    documentType: 'CC',
+    documentNumber: '1928273734',
+    user: 'pricing65',
+    password: 'pricingPASSWORD05#',
+  },
+  {
+    apodo: 'pricing63 (⚡ Token: NO, Privilegio: Ejecutor directo, Plan: Esencial)',
+    documentType: 'CC',
+    documentNumber: '1928273738',
+    user: 'pricing63',
+    password: 'pricingPASSWORD05#',
+  },
+  {
+    apodo: 'pricing64 (⚡ Token: NO, Privilegio: Ejecutor directo, Plan: Esencial)',
+    documentType: 'CC',
+    documentNumber: '1928273736',
+    user: 'pricing64',
+    password: 'pricingPASSWORD05#',
+  },
+  {
+    apodo: 'pricing66 (⚡ Token: NO, Privilegio: Ejecutor directo, Plan: Plus)',
+    documentType: 'CC',
+    documentNumber: '1928273735',
+    user: 'pricing66',
+    password: 'pricingPASSWORD05#',
+  }
+];
+
   
   // Inicializar usuarios por defecto al instalar la extensión
   chrome.runtime.onInstalled.addListener(() => {
